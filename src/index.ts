@@ -1,14 +1,13 @@
 import 'dotenv/config'
 import express from 'express'
+import rotas from './rotas'
 
 const app = express()
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.json('OK')
-})
+app.use(rotas) 
 
 app.listen(process.env.PORT, () => {
-    console.log('Rodando na porta 3000')
+    console.log('SERVIDOR INICIADO!')
 })
